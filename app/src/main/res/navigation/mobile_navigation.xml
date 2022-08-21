@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startOrderFragment">
+
+    <fragment
+        android:id="@+id/startOrderFragment"
+        android:name="com.example.lunchtime.StartOrderFragment"
+        android:label="Start Order"
+        tools:layout="@layout/fragment_start_order" >
+        <action
+            android:id="@+id/action_startOrderFragment_to_entreeMenuFragment"
+            app:destination="@id/entreeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeMenuFragment"
+        android:name="com.example.lunchtime.EntreeMenuFragment"
+        android:label="Entree Menu"
+        tools:layout="@layout/fragment_entree_menu" >
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_entreeMenuFragment_to_sideMenuFragment"
+            app:destination="@id/sideMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideMenuFragment"
+        android:name="com.example.lunchtime.SideMenuFragment"
+        android:label="Side Menu"
+        tools:layout="@layout/fragment_side_menu" >
+        <action
+            android:id="@+id/action_sideMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sideMenuFragment_to_accompanimentMenuFragment"
+            app:destination="@id/accompanimentMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accompanimentMenuFragment"
+        android:name="com.example.lunchtime.AccompanimentMenuFragment"
+        android:label="Accompaniment Menu"
+        tools:layout="@layout/fragment_accompaniment_menu" >
+        <action
+            android:id="@+id/action_accompanimentMenuFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_accompanimentMenuFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.lunchtime.CheckoutFragment"
+        android:label="Checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkoutFragment_to_startOrderFragment2"
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment" />
+    </fragment>
+</navigation>

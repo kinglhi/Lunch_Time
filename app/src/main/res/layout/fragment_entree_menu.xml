@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_entree"
+    tools:context=".EntreeMenuFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.lunchtime.model.OrderViewModel" />
+
+        <variable
+            name="entreeFragment"
+            type="com.example.lunchtime.EntreeMenuFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/entree_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/cauliflower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick='@{() -> viewModel.setEntree("cauliflower")}'
+                    android:text='@{viewModel.menuItems["cauliflower"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Entree 1" />
+
+                <TextView
+                    android:id="@+id/cauliflower_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["cauliflower"].description}'
+                    tools:text="Entree 1 description" />
+
+                <TextView
+                    android:id="@+id/cauliflower_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItems["cauliflower"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.Material3.MaterialDivider.View"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cauliflower_description" />
+
+                <RadioButton
+                    android:id="@+id/chilli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick='@{() -> viewModel.setEntree("chilli")}'
+                    android:text='@{viewModel.menuItems["chilli"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Entree 2" />
+
+                <TextView
+                    android:id="@+id/chilli_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["chilli"].description}'
+                    tools:text="Entree 2 description" />
+
+                <TextView
+                    android:id="@+id/chilli_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["chilli"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.Material3.MaterialDivider.View"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chilli_description" />
+
+                <RadioButton
+                    android:id="@+id/pasta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick='@{() -> viewModel.setEntree("pasta")}'
+                    android:text='@{viewModel.menuItems["pasta"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Entree 3" />
+
+                <TextView
+                    android:id="@+id/pasta_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["pasta"].description}'
+                    tools:text="Entree 3 description" />
+
+                <TextView
+                    android:id="@+id/pasta_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["pasta"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.Material3.MaterialDivider.View"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pasta_description" />
+
+                <RadioButton
+                    android:id="@+id/skillet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick='@{() -> viewModel.setEntree("skillet")}'
+                    android:text='@{viewModel.menuItems["skillet"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Entree 4" />
+
+                <TextView
+                    android:id="@+id/skillet_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["skillet"].description}'
+                    tools:text="Entree 1 description" />
+
+                <TextView
+                    android:id="@+id/skillet_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["skillet"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.Material3.MaterialDivider.View"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/entree_options" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.AppCompat.TextView.Subtotal"
+                android:layout_width="110dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/subtotal(viewModel.subtotal)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Order.Button.Cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <Button
+                android:id="@+id/next_button"
+                style="@style/Widget.Order.Button.Next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
